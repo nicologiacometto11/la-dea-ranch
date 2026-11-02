@@ -74,6 +74,27 @@ Il sito oggi è una vetrina statica, ma **dovrà ricevere richieste di contatto 
 - Nicolò usa **Fork** per commit e push. Non fare `push` né operazioni distruttive (reset --hard, force push) senza chiedere.
 - Commit piccoli, messaggi in italiano, all'imperativo (es. "Aggiungi form di contatto").
 
+## Deploy (GitHub Pages)
+
+- `.github/workflows/deploy.yml`: a ogni push su `main` (o a mano da Actions) fa `npm ci`, `npm run build` e pubblica `dist/` su Pages.
+- `vite.config.js` ha `base: '/la-dea-ranch/'`. Con un dominio personalizzato va messo `'/'`.
+- Per le immagini usare `import.meta.env.BASE_URL` (es. `` `${import.meta.env.BASE_URL}images/foto.webp` ``), non `/images/...`, altrimenti su Pages non si caricano.
+- Da fare a mano una tantum: repo GitHub → Settings → Pages → Source = "GitHub Actions".
+- Nessun router: se arriverà `/prenota` va gestito il refresh su Pages (HashRouter o 404.html di fallback).
+
+## Manutenzione (DA FARE quando si aggiunge Supabase)
+
+Backend scelto: **Supabase**, ma non è ancora integrato (deciso con Nicolò: prima il sito, il DB dopo). Quando si farà, replicare questa configurazione già usata in un altro progetto:
+
+1. **Variabili nel build**: in `deploy.yml` passare a `npm run build` `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY` dai secret del repo (Settings → Secrets and variables → Actions). `.env` è già in `.gitignore`: non deve mai finire su git.
+2. **Ping a Supabase** (il piano gratuito mette in pausa il progetto dopo 7 giorni senza richieste):
+   - `supabase/keepalive.sql`: funzione `public.ping()` che restituisce 1 (`create or replace`, `language sql stable security definer set search_path = public`), con `revoke all ... from public` e `grant execute ... to anon, authenticated`. Da eseguire a mano nell'SQL editor.
+   - `.github/workflows/keepalive.yml`: cron `17 6 * * 1,4` (lunedì e giovedì) + `workflow_dispatch`. POST a `$URL/rest/v1/rpc/ping` con header `apikey` e `Content-Type: application/json`, body `{}`. Se manca un secret o la risposta non è 200 il job fallisce (così GitHub manda la mail).
+3. **Tenere vivo il repo** (GitHub disattiva i workflow programmati dopo 60 giorni senza attività):
+   - `.github/workflows/attivita-mensile.yml`: cron `23 5 1 * *` + `workflow_dispatch`, `permissions: contents: write`. Scrive la data in `.github/ultimo-controllo.txt`, commit come `github-actions[bot]` e push, solo se il file è cambiato.
+   - Quel commit rifarebbe partire il deploy: aggiungere `paths-ignore: ['.github/ultimo-controllo.txt']` al trigger push di `deploy.yml`.
+4. Dopo il primo push, controllare in Actions che deploy e ping vadano a buon fine (ping lanciabile a mano con "Run workflow").
+
 ## Prossimi passi (in ordine)
 
 1. `npm install` e `npm run dev` per verificare che il sito parta.
