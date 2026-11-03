@@ -6,7 +6,7 @@ export default function Contact() {
       <div className="container">
         <div className="reveal">
           <h2>Contatti</h2>
-          <p className="lead">Vuoi provare una lezione o saperne di più? Chiamaci o scrivici, ti aspettiamo al ranch.</p>
+          <p className="lead">Vuoi provare una lezione o saperne di più? Per costi, orari e disponibilità chiamaci o scrivici: ti rispondiamo volentieri e ti aspettiamo al ranch.</p>
         </div>
         <div className="cards">
           <article className="card reveal">

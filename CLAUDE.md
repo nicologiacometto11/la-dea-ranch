@@ -15,6 +15,7 @@ Le ricerche web non hanno trovato fonti dirette sull'attività (sito/profilo uff
 
 - Fatti confermati: nome, tipo di attività (centro ippico + azienda agricola), località (Val della Torre, TO).
 - **Non inventare** servizi, prezzi, orari, storia, contatti, numeri o recensioni. Ciò che manca è marcato `TODO` in `src/content.js`.
+- **Prezzi**: la titolare non vuole pubblicare il listino, chi è interessato la contatta. Non mettere prezzi sul sito; il testo rimanda ai contatti.
 - Altri maneggi della zona (es. Ranch O.K. Corral) sono attività diverse: non usarli come fonte.
 - Prima della pubblicazione i `TODO` vanno compilati con informazioni vere dalla titolare. Se ti serve un dato mancante, chiedilo a Nicolò.
 
