@@ -39,30 +39,30 @@ export const hero = {
   image: photos.pascolo,
   eyebrow: 'Val della Torre · Piemonte',
   title: 'La Dea Ranch',
-  subtitle: 'Equitazione, pony e passeggiate nella natura. Per grandi e piccoli.',
+  subtitle: 'Un modo nuovo di vivere il cavallo: si impara, si gioca e si sta all’aria aperta. Vieni a conoscerci.',
   ctas: [
-    { label: 'Scopri le attività', href: '#centro-ippico', primary: true },
-    { label: 'Chiamaci', href: site.phoneHref },
+    { label: 'Vieni a trovarci', href: '#contatti', primary: true },
+    { label: 'Scopri le attività', href: '#centro-ippico' },
   ],
   highlights: ['Adulti e bambini', 'Pony games', 'Passeggiate a cavallo', 'Campi stagionali'],
 }
 
 export const about = {
   title: 'Chi siamo',
-  lead: 'Un centro ippico e un’azienda agricola a Val della Torre, dove i cavalli sono al centro di tutto.',
+  lead: 'Siamo una realtà giovane, con tanta voglia di fare e idee nuove, nel verde di Val della Torre.',
   // TODO: storia, persone, valori: da farsi raccontare dalla titolare
   image: photos.pony,
-  text: 'Da noi si impara a montare, si gioca con i pony, si cammina nella natura e si cresce insieme ai cavalli, che si tratti di una prima lezione o di un campo per bambini.',
+  text: 'La Dea Ranch è un centro ippico e un’azienda agricola dove i cavalli sono al centro di tutto. Non serve essere esperti: che sia una prima volta in sella, una giornata di pony games o un campo per bambini, qui trovi un posto semplice, vivo e accogliente. Passa a conoscerci.',
 }
 
 export const horseCenter = {
   title: 'Centro ippico',
-  intro: 'Lezioni, giochi e passeggiate: ce n’è per ogni età e per ogni livello.',
+  intro: 'Lezioni, giochi e passeggiate per ogni età e ogni livello. Si parte da zero e ci si diverte fin dal primo giorno.',
   image: photos.lezione,
   services: [
     { title: 'Lezioni di equitazione', text: 'Per adulti e bambini.' },
-    { title: 'Pony games e scuola pony', text: 'Per i più piccoli, tra gioco e prime esperienze in sella.' },
-    { title: 'Passeggiate a cavallo', text: 'Nella natura intorno al ranch.' },
+    { title: 'Pony games e scuola pony', text: 'Per i più piccoli: si impara giocando, tra pony e nuovi amici.' },
+    { title: 'Passeggiate a cavallo', text: 'Nella natura intorno al ranch, per staccare dalla routine.' },
   ],
 }
 
@@ -70,7 +70,7 @@ export const horseCenter = {
 // Il fieno non è stato inserito (non confermato).
 export const farm = {
   title: 'Azienda agricola',
-  intro: 'La Dea Ranch è anche azienda agricola: il nostro lavoro ruota attorno al cavallo e alla vita all’aria aperta.',
+  intro: 'Oltre al maneggio siamo anche azienda agricola: la nostra giornata ruota attorno ai cavalli e alla vita all’aria aperta.',
   products: [
     { title: 'Allevamento', text: 'Nascita, crescita e cura quotidiana di cavalli e pony.' },
     { title: 'Pensione cavalli', text: 'Accoglienza e cura per i cavalli dei proprietari.' },
@@ -82,7 +82,7 @@ export const farm = {
 // Dati dalla locandina Winter Camp 2026/27. Da aggiornare ogni stagione.
 export const winterCamp = {
   title: 'Winter Camp 2026/27',
-  intro: 'Giornate di pony, laboratori natalizi e compiti, all’aria aperta e al caldo di un ranch.',
+  intro: 'Le vacanze di Natale tra pony, laboratori natalizi e aiuto compiti: giornate all’aria aperta, pensate per i bambini.',
   days: [
     'Mer 23 dicembre', 'Gio 24 dicembre', 'Lun 28 dicembre', 'Mar 29 dicembre',
     'Mer 30 dicembre', 'Gio 31 dicembre', 'Lun 4 gennaio', 'Mar 5 gennaio',
