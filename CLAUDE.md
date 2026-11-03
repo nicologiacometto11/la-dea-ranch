@@ -23,7 +23,7 @@ Le ricerche web non hanno trovato fonti dirette sull'attività (sito/profilo uff
 
 - React 18 + Vite 5, JavaScript (niente TypeScript), CSS semplice in `src/index.css` (variabili CSS, nessun framework UI)
 - Single page con navigazione per ancore, nessun router per ora
-- Font: Lora (titoli) e Inter (testo) da Google Fonts
+- Font: Lora (titoli) e Inter (testo), **in locale** in `src/fonts/` (font variabili, caricati da `@font-face` in `index.css`). Non rimettere Google Fonts: richieste a Google = problema GDPR e banner cookie.
 
 ## Comandi
 
@@ -83,6 +83,20 @@ Il sito oggi è una vetrina statica, ma **dovrà ricevere richieste di contatto 
 - Da fare a mano una tantum: repo GitHub → Settings → Pages → Source = "GitHub Actions".
 - Anteprima di condivisione (WhatsApp ecc.) e favicon: tag in `index.html`, immagine `public/images/og.jpg` (1200×630), icone in `public/`. Gli URL `og:` e `canonical` sono assoluti: se cambia dominio vanno aggiornati. Dopo modifiche, WhatsApp/Facebook tengono la vecchia anteprima in cache (ri-scansione: Sharing Debugger di Facebook).
 - Nessun router: se arriverà `/prenota` va gestito il refresh su Pages (HashRouter o 404.html di fallback).
+
+## Dominio (DA FARE più avanti)
+
+Per ora il sito sta su `nicologiacometto11.github.io/la-dea-ranch`. Deciso con Nicolò: il dominio proprio (tipo `ladearanch.it`) si prende più in là. Quando succede:
+1. Registrare il dominio e collegarlo a GitHub Pages (Settings → Pages → Custom domain, record DNS, spunta HTTPS; file `public/CNAME`).
+2. `vite.config.js`: `base: '/'`.
+3. Sostituire l'URL `https://nicologiacometto11.github.io/la-dea-ranch/` con quello nuovo in: `index.html` (canonical, `og:`, `twitter:`, JSON-LD), `public/sitemap.xml`, `public/robots.txt`, `src/content.js` se usato.
+4. In `public/404.html` i percorsi `/la-dea-ranch/...` diventano `/...`.
+5. Registrare il sito in Google Search Console e inviare la sitemap. Nota: `robots.txt` è letto da Google solo se sta alla radice del dominio, quindi su github.io non conta; col dominio proprio sì.
+
+## SEO e dati strutturati
+
+- `index.html` contiene il JSON-LD `SportsActivityLocation` (nome, indirizzo, telefono, email, social). Quando la titolare dà gli orari aggiungere `openingHoursSpecification`.
+- `public/sitemap.xml`, `public/robots.txt`, `public/404.html`.
 
 ## Manutenzione (DA FARE quando si aggiunge Supabase)
 
