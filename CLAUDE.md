@@ -71,7 +71,7 @@ Il sito oggi è una vetrina statica, ma **dovrà ricevere richieste di contatto 
 ## Git
 
 - Repo: `git@github.com:nicologiacometto11/la-dea-ranch.git` (privato), branch `main`, remote `origin` via SSH.
-- Nicolò usa **Fork** per commit e push. Non fare `push` né operazioni distruttive (reset --hard, force push) senza chiedere.
+- Commit e push su `main` si fanno **senza chiedere** a ogni modifica (autorizzato da Nicolò: se serve si torna indietro con git). Operazioni distruttive (reset --hard, force push) vanno invece chieste.
 - Commit piccoli, messaggi in italiano, all'imperativo (es. "Aggiungi form di contatto").
 
 ## Deploy (GitHub Pages)

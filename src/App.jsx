@@ -6,6 +6,7 @@ import CardSection from './components/CardSection.jsx'
 import WinterCamp from './components/WinterCamp.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import CallBar from './components/CallBar.jsx'
 import { horseCenter, farm } from './content.js'
 
 // Fa comparire con una dissolvenza gli elementi .reveal quando entrano nello schermo
@@ -55,6 +56,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <CallBar />
     </>
   )
 }
