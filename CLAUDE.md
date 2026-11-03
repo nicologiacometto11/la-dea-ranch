@@ -81,6 +81,7 @@ Il sito oggi è una vetrina statica, ma **dovrà ricevere richieste di contatto 
 - `vite.config.js` ha `base: '/la-dea-ranch/'`. Con un dominio personalizzato va messo `'/'`.
 - Per le immagini usare `import.meta.env.BASE_URL` (es. `` `${import.meta.env.BASE_URL}images/foto.webp` ``), non `/images/...`, altrimenti su Pages non si caricano.
 - Da fare a mano una tantum: repo GitHub → Settings → Pages → Source = "GitHub Actions".
+- Anteprima di condivisione (WhatsApp ecc.) e favicon: tag in `index.html`, immagine `public/images/og.jpg` (1200×630), icone in `public/`. Gli URL `og:` e `canonical` sono assoluti: se cambia dominio vanno aggiornati. Dopo modifiche, WhatsApp/Facebook tengono la vecchia anteprima in cache (ri-scansione: Sharing Debugger di Facebook).
 - Nessun router: se arriverà `/prenota` va gestito il refresh su Pages (HashRouter o 404.html di fallback).
 
 ## Manutenzione (DA FARE quando si aggiunge Supabase)
