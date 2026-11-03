@@ -13,16 +13,21 @@ export default function Contact() {
           </article>
           <article className="card reveal" style={{ '--i': 1 }}>
             <h3>Chiamaci</h3>
-            <p>{site.phone}</p>
-            <a className="btn btn--solid" href={site.phoneHref}>Chiama ora</a>
+            <p>{site.phone}<br />{site.email}</p>
+            <div className="btn-row">
+              <a className="btn btn--solid" href={site.phoneHref}>Chiama ora</a>
+              <a className="btn btn--solid" href={`mailto:${site.email}`}>Scrivi una mail</a>
+            </div>
           </article>
           <article className="card reveal" style={{ '--i': 2 }}>
             <h3>Seguici</h3>
-            <p>Foto, novità e iniziative sul nostro profilo Instagram.</p>
-            <a className="btn btn--solid" href={site.instagram} target="_blank" rel="noreferrer">@ladearanch</a>
+            <p>Foto, novità e iniziative sui nostri profili social.</p>
+            <div className="btn-row">
+              <a className="btn btn--solid" href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>
+              <a className="btn btn--solid" href={site.facebook} target="_blank" rel="noreferrer">Facebook</a>
+            </div>
           </article>
         </div>
-        {site.email && <p className="lead">Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>}
       </div>
     </section>
   )

@@ -52,11 +52,17 @@ a { color: var(--accent); }
 .hero {
   position: relative; overflow: hidden; color: var(--accent-ink);
   padding: clamp(3rem, 9vw, 7rem) 0 clamp(5rem, 11vw, 8rem);
-  background:
-    radial-gradient(circle at 80% 20%, rgba(233, 196, 106, .22), transparent 45%),
-    radial-gradient(circle at 10% 90%, rgba(180, 140, 220, .35), transparent 50%),
-    linear-gradient(135deg, var(--accent-deep), var(--accent));
+  background: var(--accent-deep);
 }
+.hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+.hero__overlay {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(233, 196, 106, .18), transparent 45%),
+    linear-gradient(135deg, rgba(47, 31, 71, .9), rgba(90, 62, 122, .72) 60%, rgba(47, 31, 71, .55));
+}
+.hero__inner, .hero__wave { z-index: 1; }
+.hero__inner { position: relative; }
 .hero__inner { display: grid; gap: 2rem; align-items: center; justify-items: center; text-align: center; }
 .hero__logo { width: clamp(150px, 30vw, 240px); height: auto; border-radius: 50%; background: #fff; padding: .4rem; box-shadow: 0 20px 50px rgba(0,0,0,.35); animation: float 6s ease-in-out infinite; }
 .hero h1 { font-size: clamp(2.6rem, 8vw, 4.8rem); margin-bottom: .25em; }
@@ -120,3 +126,20 @@ a { color: var(--accent); }
   .hero__logo { animation: none; }
 }
 .card.reveal.is-visible:hover { transform: translateY(-4px); }
+.btn-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* Foto affiancate al testo */
+.split { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 850px) {
+  .split { grid-template-columns: 1.1fr .9fr; gap: 4rem; }
+  .split--rev { grid-template-columns: .9fr 1.1fr; }
+  .split--rev > .photo { order: -1; }
+}
+.photo { margin: 0; }
+.photo img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); aspect-ratio: 1 / 1; }
+.photo--tall img { aspect-ratio: 4 / 5; object-position: center 40%; }
+.photo.reveal { transition-property: opacity, transform; }
+@media (min-width: 850px) {
+  .photo--tall img { transform: rotate(2deg); }
+  .split--rev .photo img { transform: rotate(-2deg); }
+}

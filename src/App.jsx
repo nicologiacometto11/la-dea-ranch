@@ -42,6 +42,7 @@ export default function App() {
           title={horseCenter.title}
           intro={horseCenter.intro}
           items={horseCenter.services}
+          image={horseCenter.image}
           alt
         />
         <CardSection

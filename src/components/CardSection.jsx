@@ -1,10 +1,17 @@
-export default function CardSection({ id, title, intro, items, alt = false }) {
+export default function CardSection({ id, title, intro, items, image, alt = false }) {
   return (
     <section id={id} className={`section${alt ? ' section--alt' : ''}`}>
       <div className="container">
-        <div className="reveal">
-          <h2>{title}</h2>
-          {intro && <p className="lead">{intro}</p>}
+        <div className={image ? 'split split--rev' : undefined}>
+          <div className="reveal">
+            <h2>{title}</h2>
+            {intro && <p className="lead">{intro}</p>}
+          </div>
+          {image && (
+            <figure className="photo reveal">
+              <img src={image.src} alt={image.alt} loading="lazy" />
+            </figure>
+          )}
         </div>
         <div className="cards">
           {items.map((item, i) => (

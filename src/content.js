@@ -12,10 +12,17 @@ export const site = {
   // Numero dalla locandina del Winter Camp (referente: Tabata), confermato valido per tutto
   phone: '346 3629775',
   phoneHref: 'tel:+393463629775',
-  // TODO: email, orari di apertura, P.IVA
-  email: '',
+  // TODO: orari di apertura, P.IVA
+  email: 'az.agr.ladea@gmail.com',
   instagram: 'https://www.instagram.com/ladearanch/',
+  facebook: 'https://www.facebook.com/p/La-Dea-Ranch-61590458589500/',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Via+San+Gillio+31+10040+Val+della+Torre+TO',
+}
+
+export const photos = {
+  pascolo: { src: img('pascolo.webp'), alt: 'Cavalli al pascolo nel prato del ranch' },
+  pony: { src: img('pony-amiche.webp'), alt: 'Due ragazze in sella a due pony, mano nella mano, in un prato' },
+  lezione: { src: img('lezione.webp'), alt: 'Lezione di pony games in campo, con le montagne sullo sfondo' },
 }
 
 export const logo = { src: img('logo.webp'), alt: 'Logo La Dea Ranch' }
@@ -29,6 +36,7 @@ export const nav = [
 ]
 
 export const hero = {
+  image: photos.pascolo,
   eyebrow: 'Val della Torre · Piemonte',
   title: 'La Dea Ranch',
   subtitle: 'Equitazione, pony e passeggiate nella natura. Per grandi e piccoli.',
@@ -43,12 +51,14 @@ export const about = {
   title: 'Chi siamo',
   lead: 'Un centro ippico e un’azienda agricola a Val della Torre, dove i cavalli sono al centro di tutto.',
   // TODO: storia, persone, valori: da farsi raccontare dalla titolare
+  image: photos.pony,
   text: 'Da noi si impara a montare, si gioca con i pony, si cammina nella natura e si cresce insieme ai cavalli, che si tratti di una prima lezione o di un campo per bambini.',
 }
 
 export const horseCenter = {
   title: 'Centro ippico',
   intro: 'Lezioni, giochi e passeggiate: ce n’è per ogni età e per ogni livello.',
+  image: photos.lezione,
   services: [
     { title: 'Lezioni di equitazione', text: 'Per adulti e bambini.' },
     { title: 'Pony games e scuola pony', text: 'Per i più piccoli, tra gioco e prime esperienze in sella.' },
@@ -84,5 +94,5 @@ export const winterCamp = {
   flyer: { src: img('winter-camp-2026-27.webp'), alt: 'Locandina del Winter Camp 2026/27 de La Dea Ranch' },
 }
 
-// TODO: foto vere del ranch in public/images/. Finché è vuota la sezione Galleria non viene mostrata.
+// Galleria non mostrata: servono altre foto per riempirla (le 3 già usate stanno in hero, chi siamo e centro ippico)
 export const gallery = []

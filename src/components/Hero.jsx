@@ -3,6 +3,8 @@ import { hero, logo } from '../content.js'
 export default function Hero() {
   return (
     <section id="top" className="hero">
+      <img className="hero__bg" src={hero.image.src} alt="" fetchPriority="high" />
+      <div className="hero__overlay" aria-hidden="true" />
       <div className="container hero__inner">
         <img className="hero__logo" src={logo.src} alt={logo.alt} width="220" height="220" />
         <div className="hero__text">
