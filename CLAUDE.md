@@ -64,7 +64,7 @@ Il sito oggi è una vetrina statica, ma **dovrà ricevere richieste di contatto 
 - Contenuti in `src/content.js`, componenti generici.
 - Mobile first: i visitatori arriveranno soprattutto da Instagram/telefono.
 - Accessibilità di base: alt sulle immagini, contrasto sufficiente, navigazione da tastiera.
-- Immagini: solo foto fornite dalla titolare, ottimizzate (WebP/JPG, max ~1600px) in `public/images/`. Niente foto stock spacciate per foto del ranch.
+- Immagini: foto vere del ranch, prese dalla titolare o dai loro profili (Instagram, Google), ottimizzate (WebP/JPG, max ~1600px) in `public/images/`. Decisione di Nicolò. Niente foto stock spacciate per foto del ranch.
 - Palette provvisoria in `src/index.css`: da rivedere con logo e colori reali.
 - Codice semplice, commenti solo dove servono, nessuna dipendenza nuova senza motivo.
 
